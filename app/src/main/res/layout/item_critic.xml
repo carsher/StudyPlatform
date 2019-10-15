@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="7dp"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_below="@+id/tv_title_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_criticName"
+            android:padding="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周小明"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_clickLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_loves_off"
+                android:text="0"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/tv_critic"
+                android:layout_marginRight="10dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_criticTime"
+        android:padding="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018-10-01 21:21"
+        android:textSize="10sp"/>
+    <TextView
+        android:id="@+id/tv_content_critic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        />
+
+</LinearLayout>

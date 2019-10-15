@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+<RelativeLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="#60BBFF"
+   >
+
+    <TextView
+        android:id="@+id/tv_school"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="25dp"
+        android:paddingBottom="8dp"
+        android:text="广东******学院"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/btn_search"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_zoom_in_black_24dp"/>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/img_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            ></android.support.v4.view.ViewPager>
+
+    </RelativeLayout>
+<LinearLayout
+    android:visibility="gone"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#7DBCEE"
+        />
+    <TextView
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文史类"
+        android:layout_marginLeft="30dp"
+        android:textSize="18sp"
+        android:textColor="#60BBFF"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#7DBCEE"
+        />
+</LinearLayout>
+
+    <com.example.administrator.learning.common.utils.HorizontalListView
+        android:layout_gravity="center"
+        android:id="@+id/item_tv_channel"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:visibility="gone">
+
+    </com.example.administrator.learning.common.utils.HorizontalListView>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#7DBCEE"
+            />
+        <TextView
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="课程列表"
+            android:layout_marginLeft="16dp"
+            android:textSize="18sp"
+            android:textColor="#60BBFF"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#7DBCEE"
+            />
+    </LinearLayout>
+
+
+            <!--<com.example.administrator.learning.common.utils.HorizontalListView-->
+                <!--android:layout_gravity="center"-->
+                <!--android:id="@+id/item_tv_channe2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="333dp">-->
+            <!--</com.example.administrator.learning.common.utils.HorizontalListView>-->
+            <GridView android:id="@+id/item_tv_channe2"
+                android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:columnWidth="90dp"
+            android:gravity="center"
+            android:horizontalSpacing="8dp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp"></GridView>
+    </LinearLayout>
+    </ScrollView>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:id="@+id/linsectionAll">
+
+    <LinearLayout
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+        <TextView
+            android:singleLine="true"
+            android:focusable="false"
+            android:id="@+id/tv_seril"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:clickable="false"
+            android:id="@+id/tv_knobble"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="软件下载"/>
+    </LinearLayout>
+    <!--<RelativeLayout-->
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:id="@+id/lin_section"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_below="@+id/tv_statu">-->
+
+    <!--</RelativeLayout>-->
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginTop="3dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/tv_title_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x~3加y~2次方=2问为何x>=0？求答"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginLeft="4dp"
+            android:layout_alignParentTop="true"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+        <LinearLayout
+            android:layout_below="@+id/tv_title_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_questionName"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="周小明"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/tv_questionTime"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018-10-01 21:21"
+                android:layout_marginLeft="20dp"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+    <TextView
+        android:id="@+id/tv_content_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        android:maxLines="2"
+        android:ellipsize="end"
+        />
+
+</LinearLayout>

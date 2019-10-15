@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+        <item>学生</item>
+        <item>老师</item>
+        <item>校外人士</item>
+    </string-array>
+    <string-array name="spinner_school">
+        <item>广东科学技术职业学院</item>
+        <item>珠海城市建设职业学院</item>
+        <item>珠海艺术学院</item>
+    </string-array>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.learning.video.view.PostActivity">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:background="#61B9FF"
+        android:fitsSystemWindows="false"
+        android:clipToPadding="true"
+        android:paddingBottom="10dp"
+        android:paddingTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/back_last2"
+            android:src="@drawable/ic_returns"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:text="模板中心"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/back_last2"
+            android:layout_toEndOf="@+id/back_last2"
+            android:layout_marginStart="10dp" />
+
+    </RelativeLayout>
+
+   <LinearLayout
+       android:padding="8dp"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="#F5F5F5">
+       <TextView
+           android:id="@+id/tv_title_question"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="x~3加y~2次方=2问为何x>=0？求答"
+           android:layout_marginLeft="4dp"
+           android:layout_alignParentTop="true"
+           android:textSize="16sp"
+           android:textColor="#000"/>
+
+       <TextView
+           android:layout_marginTop="6dp"
+           android:id="@+id/tv_content_question"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="14sp"
+           android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+           />
+       <LinearLayout
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/tv_title_question"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/tv_questionName"
+               android:padding="2dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="提问者：周小明"
+               android:textSize="12sp"/>
+
+           <TextView
+               android:id="@+id/tv_postTimer"
+               android:padding="2dp"
+               android:gravity="right"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="2018-10-01 21:21"
+
+               android:textSize="12sp"/>
+       </LinearLayout>
+   </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#CACACA"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F5F5F5"
+            android:padding="12dp"></ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+            <TextView
+                android:id="@+id/add_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_btn"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="我要回答"
+                android:layout_margin="5dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

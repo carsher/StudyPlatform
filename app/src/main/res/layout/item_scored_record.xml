@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"></TextView>
+        <TableRow
+            android:id="@+id/tb_row"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"></TextView>
+
+            <TextView
+                android:id="@+id/tb_no"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="序号"></TextView>
+            <TextView android:layout_width="0dp"
+                android:id="@+id/tb_name"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="用户名"></TextView>
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"></TextView>
+            <TextView
+                android:id="@+id/tb_course"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="课程名"></TextView>
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"></TextView>
+            <TextView android:layout_width="0dp"
+                android:id="@+id/tb_smallsection"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="小节"></TextView>
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"></TextView>
+            <TextView android:layout_width="0dp"
+                android:id="@+id/tb_testNum"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="测试次数"></TextView>
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"></TextView>
+            <TextView android:layout_width="0dp"
+                android:id="@+id/tb_testScord"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="测试成绩"></TextView>
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"></TextView>
+
+        </TableRow>
+        <TextView
+            android:layout_above="@+id/list_record_scored"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"></TextView>
+    </TableLayout>
+</LinearLayout>

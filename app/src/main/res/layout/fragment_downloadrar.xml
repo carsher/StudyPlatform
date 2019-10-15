@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.learning.video.view.SectionFragment"
+    tools:ignore="MissingDefaultResource">
+    <TextView
+        android:gravity="center"
+        android:paddingTop="25dp"
+        android:paddingBottom="15dp"
+        android:textSize="18dp"
+        android:textColor="#fff"
+        android:background="#61B8FF"
+        android:text="课程资源"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <GridView
+        android:id="@+id/listview_downloadrar"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="8dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp"></GridView>
+<!--   <ListView-->
+<!--       android:padding="8dp"-->
+
+<!--       android:id="@+id/listview_downloadrar"-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="match_parent"></ListView>-->
+</LinearLayout>

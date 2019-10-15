@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.example.administrator.learning"
+        minSdkVersion 18
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "aSl1Xnpiti8Nc7Sl4qmLQ3",
+                GETUI_APP_KEY   : "bs2Lc158Kk9W4UzhqnSzF1",
+                GETUI_APP_SECRET: "FlisvW0lMq5xOvOM160A16"
+        ]
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //    //添加exoplayer
+    //    implementation 'com.google.android.exoplayer:exoplayer:2.X.X'
+    //    implementation 'com.google.android.exoplayer:exoplayer-core:2.X.X'
+    //    implementation 'com.google.android.exoplayer:exoplayer-dash:2.X.X'
+    //    implementation 'com.google.android.exoplayer:exoplayer-ui:2.X.X'
+    /*添加okhttp3网络依赖库*/
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    /*添加json包*/
+    compile 'com.google.code.gson:gson:2.3.1'
+    /*添加rxjava rx安卓依赖库*/
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    /*添加个推SDK*/
+    compile 'com.getui:sdk:2.12.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:25.3.1'
+    /*图片加载库picasso*/
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:design:25.3.1'
+    /*xutil3*/
+    compile 'org.xutils:xutils:3.5.0'
+    testCompile 'junit:junit:4.12'
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tc="http://schemas.android.com/apk/res/com.example.administrator.learning"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="12dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/img_course_record"
+            android:layout_width="108dp"
+            android:layout_height="86dp"
+            android:src="@drawable/testdele" />
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/course_name_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/img_course_record"
+        android:layout_marginEnd="53dp"
+        android:layout_marginTop="10dp"
+        android:text="android入门到精通"
+        android:singleLine="true"
+
+        android:textSize="22sp" />
+    <TextView
+        android:id="@+id/tv_section_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="android入门到精通"
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:layout_above="@+id/tv_studytime"
+        android:layout_alignStart="@+id/tv_studytime"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/tv_studytime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_course_record"
+        android:layout_alignStart="@+id/course_name_record"
+        android:text="android入门到精通"
+        android:singleLine="true"
+
+        android:textSize="12sp"/>
+
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/linearLayout3">
+
+            <com.example.administrator.learning.common.view.CompletedView
+                android:id="@+id/tasks_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                tc:circleColor="@color/white"
+                tc:radius="50dip"
+                tc:ringBgColor="@color/white2"
+                tc:ringColor="@color/colorRed"
+                tc:strokeWidth="10dip" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

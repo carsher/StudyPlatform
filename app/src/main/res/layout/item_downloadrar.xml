@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:layout_marginTop="16dp"
+    android:background="#F5F5F5">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <ImageView
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:id="@+id/img1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_message"></ImageView>
+        <ImageView
+            android:visibility="gone"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:id="@+id/img2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_message"></ImageView>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="Android">
+        </TextView>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="Android">
+        </TextView>
+    </TableRow>
+    </TableLayout>
+</LinearLayout>
