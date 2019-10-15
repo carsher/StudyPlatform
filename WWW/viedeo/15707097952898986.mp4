@@ -1,0 +1,795 @@
+-- phpMyAdmin SQL Dump
+-- version phpStudy 2014
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2019 年 02 月 23 日 02:26
+-- 服务器版本: 5.5.53
+-- PHP 版本: 5.4.45
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 数据库: `study`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(18) NOT NULL,
+  `pwd` varchar(32) NOT NULL,
+  `type` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `pwd`, `type`) VALUES
+(1, 'admin', '123', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_answertemple`
+--
+
+CREATE TABLE IF NOT EXISTS `api_answertemple` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `cout` int(5) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `api_answertemple`
+--
+
+INSERT INTO `api_answertemple` (`id`, `name`, `cout`) VALUES
+(2, '数新风答题模板', 5),
+(3, '测试答题模板', 5);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_code`
+--
+
+CREATE TABLE IF NOT EXISTS `api_code` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `phone` varchar(11) NOT NULL,
+  `code` varchar(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- 转存表中的数据 `api_code`
+--
+
+INSERT INTO `api_code` (`id`, `phone`, `code`) VALUES
+(1, '13672660891', '7024'),
+(4, '15015484386', '3324'),
+(5, '18928070670', '4141'),
+(6, '', '1449'),
+(7, '13058352164', '4633'),
+(8, '13232222591', '9695');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_course`
+--
+
+CREATE TABLE IF NOT EXISTS `api_course` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `img` varchar(55) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `introduce` varchar(255) NOT NULL,
+  `hot` int(10) NOT NULL DEFAULT '0',
+  `section` int(4) NOT NULL,
+  `test` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `api_course`
+--
+
+INSERT INTO `api_course` (`id`, `name`, `img`, `type`, `introduce`, `hot`, `section`, `test`) VALUES
+(1, 'hell', 'newtree.jpg', '文字类', '讲文明，书新风。巴拉巴拉小魔仙。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。', 2, 9, 2),
+(3, '测试添加的课程', '15321429663031371.jpg', '文字类', '我测试添加的课程简介呀', 4, 8, 2),
+(4, '在线学习视频课程', '15321430349247711.jpg', '视频类', '测试天津的得到 哈哈哈和和和和和阿瑟东as阿瑟东\r\n阿斯顿卡死了', 6, 9, 0),
+(5, ' 现代汉字学', '15324010105272857.jpg', '文字类', '本课主要讲述汉字的性质和特点，重点介绍现代汉字的属性，包括字量、字形、字音、字序、汉字规范化（包括政府主管部门颁布的有关汉字的各项标准）等。', 4, 12, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_coursetextresource`
+--
+
+CREATE TABLE IF NOT EXISTS `api_coursetextresource` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `pid` int(10) NOT NULL,
+  `section` varchar(10) NOT NULL DEFAULT '',
+  `sectiontitle` varchar(55) NOT NULL DEFAULT '',
+  `content` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+
+--
+-- 转存表中的数据 `api_coursetextresource`
+--
+
+INSERT INTO `api_coursetextresource` (`id`, `pid`, `section`, `sectiontitle`, `content`) VALUES
+(1, 1, '1', '学习雷锋呀', '一条马路上，红灯停绿灯行，明明红灯，加速的车辆还是速度飞驰\r\n\r\n擦身而过，吓得手里拎着的袋子一松，橘子滚得到处都是\r\n\r\n看着滚得脏兮兮的橘子，突然，很生气，很愤怒\r\n\r\n回去的路上，一路都是满满的负能量，只有一个念头\r\n\r\n怪那辆不懂规则的车辆，这人真不懂礼貌，啊\r\n\r\n越想越生气，不然，现在应该是在家安逸地吃着橘子看着喜欢的节目\r\n\r\n可是，现在连看节目的心情都没有\r\n\r\n这是个很小的案列，也往往出现在日常生活中\r\n\r\n其实，本来突发事情很多，谁都无法知道下一秒会遇到什么人发生什么事\r\n\r\n但不变应万变，那就是我们自己的情绪控制\r\n\r\n正如上述事件，橘子滚落，是已发生不可更改的事情\r\n\r\n而主人翁却花费大量时间纠结在别人的过错，影响自己的心情\r\n\r\n花费时间在不开心的事情上，而且还不是很重要的事情\r\n\r\n转化方式，橘子滚落了，那就从新去买，或者吃点别的\r\n\r\n一切按照自己既定的计划走，那么就不会到晚上还一直耿耿于怀\r\n\r\n综上所述，用别人的过错惩罚自己，有点傻\r\n\r\n尤其是潜意识，或者下意识做得行为\r\n\r\n！！！！！'),
+(2, 1, '2', '车水马龙', '广东省阳江市东平镇大澳渔村毗邻渔港，是一座古色古香的渔村，至今仍保持着古渔村的风貌，也是广东省唯一保持着原始渔家小屋风貌的渔村。\r\n\r\n　　7月19日，为探寻改革开放以来粤西乡村社会的发展变迁，岭南师范学院“历史寻踪”社会实践队来到阳江市东平镇大澳渔村开展调研活动，走访了大澳渔村古居民区并参观了大澳渔村文化博物馆。本次实践以实地考察调研和拍摄开展实践活动，以此来深入了解和学习大澳渔村的独特文化及历史发展过程，同时做文化的保护者和传承人。\r\n\r\n　　在文化博物馆里，调研团队怀着崇敬的心情参观了古文物的照片，看到了仿制的风帆船模型和一副鳁鲸骨架等，这是古渔村文化中的重要组成部分。通过实地走访，在采访当地渔委会主任、记事员等过程中，实践队员们更是了解到改革开放以来大澳渔村的发展历程。当地对保存完好的旅游资源进行了重新开发，并建设了“古渔民民居群”景点等，东平大澳渔村很快成为了阳江市的旅游名片之一。\r\n\r\n　　通过本次"三下乡"实践活动的开展，调研团队对大澳渔村风景及其文化进行了学习和拍摄。团队对这几天所见所闻受到了强烈的心灵震撼和洗礼，也意识到让更多人知道大澳渔村风景，学习古渔文化，传承传统渔村文化的重要性。活动结束后，团队成员也纷纷投入到后期整理工作中，都为古渔村文化的宣传努力，争做文化的宣传人和守护人。 '),
+(3, 1, '3', '《瓶邪》语录摘抄', '　1、麒麟一笑，阎王绕道。\r\n天真一笑，麒麟开道。\r\n麒麟拔刀，天下折夭。\r\n闷王一闹，吴邪上吊。\r\n\r\n　　2、以前的我崇拜神话，现在的我一眼就能从神话中看出破绽来。\r\n\r\n　　3、我只是起了一个歹毒的念头：假如还有再见的机会，一定要喂他吃几只西班牙大苍蝇，不知道他的体质是否也能免疫。?——一起作死呢这是\r\n\r\n　　4、有时候，事情的真相往往藏在地狱，而那些执着的人，为了真相不惜走进地狱，却不知自己即将失去最宝贵的东西。只可惜，他吴邪选的路，就算虐死、伤透了心，也要把它走完。\r\n\r\n　　5、无数无法触摸的记忆碎片，混着那和世间无关的眼神，混合出了世界上最纯粹的绝望的滋味。\r\n\r\n　　6、此去经年，再也没有一个人会永远陪在他身边了。张起灵看着矮矮的墓碑，没说任何话，眼泪却是一滴一滴的坠落。\r\n……\r\n“张起灵，你愿意用你的长生交换他的命吗？”\r\n“愿意。”为了他，什么都愿意。\r\n……\r\n“这位小哥，让一下！”张起灵抬头，是一位清朗的少年，更重要的是，他是……\r\n“吴邪。”\r\n“啊，小哥你认识我，不好意思，这几年我忘了许多事……”少年搔搔脑袋，不好意思地笑了。\r\n“张起灵。”看着眼前人还没反应过来的样子，又补道“我的名字，记住了，可不许忘。”\r\n他不记得没关系，只要他还在，他们还会像从前一样。\r\n\r\n　　7、人总要有点信仰，外八行的人是拜关公的。盗墓的人，北派拜的是钟馗，南派一般不来这一套，但是长沙那一带有说法，说是拜过一段时间的“黄王”。 ----南派三叔\r\n\r\n　　8、哑巴张，当年追你至长白山青铜门的，是天真，却不是吴邪，不是吴家的小三爷。\r\n\r\n　　9、少年，遥记你初时纯真美好，天真无邪------沙海只是一个转折点，瓶邪--一生一世，永生永世常相伴。\r\n\r\n　　10、哪个像我？哪个像我？我靠，都长得那么衰，每个都他妈像啊。\r\n\r\n　　11、看着不像是生出来的，而是拉出来的\r\n\r\n　　12、十年之后，如果你还记得我\r\n\r\n　　13、我在想，如果当时我立马赶到三叔面前'),
+(4, 1, '4', '他说，要紧凑地活着', '别来无往事，光阴不尽凉。\r\n\r\n天气一天天热起来，又伴着反复的大小降温，叫人弄不清到底要穿些什么。早上穿的的外套卫衣中午恨不得脱个精光，要是看到天气预报说今天天气不错温度也不低，以此决定穿件中袖出去，早上准被冻成狗。\r\n\r\n要不是天天住在这里，换谁也不相信地处南方的临安最低气温还能到个位数——放在北方老家，也早就没这温度了。\r\n\r\n乖乖，这可到四月底了呀！\r\n\r\n日子不紧不慢的过着，我们倒是走的越来越快。\r\n\r\n夜时偶有入梦，荒唐离奇，又总伴着白天凡事经历种种。\r\n\r\n作业渐多，有条不紊地赶着，有时赶到凌晨，不过还好有趣，这个作品的分析那个作品的解读，夹杂着一篇小小的剧本。\r\n\r\n室友躺在床上，我在桌旁用着机械键盘在电脑上噼里啪啦地一顿乱敲，享受着在空白的页面上蹦出一个又一个字符的快感。\r\n\r\n空闲时间穿插于满课的空隙，和早上的赖床贪睡。\r\n\r\n楼下的洗衣机往往有人用着，脏衣服攒了一盆，千挑万选找时间下去洗衣。洗衣液快用完，用室友的用了两次，总是忘记买。洗澡用的热水卡余额也见了底，又忘了两天去充值，不知不觉到了周末，人家不开门营业充值。\r\n\r\n有时阳光正好会把被子晒出来，晚上忘了收外面温度降到了个位数，拿回来的被子变得更潮更凉，摊摊手哭笑不得。\r\n\r\n谁都忙，奇怪的是谁都不觉得忙。\r\n\r\n晚上总是九、十点钟回来，赶忙洗澡吹头整理衣服——十一点就熄灯。\r\n\r\n回来的时候已是不早，室友却常常依旧未归，有的在排练，有的在参加创新大赛。\r\n\r\n每个人都有每个人的追求，而为了追求天天嘴上骂骂咧咧的，其实还真不算什么的。嘴上说的再难听，被人骂的再惨，该干的也毫不犹豫的可劲干。\r\n\r\n赶上学期单周周四，下午便无课，但往往有事，有事一忙就忙一下午，没事就睡个午觉。学校的床有种怪异的魔力，一睡午觉就做噩梦，还是那种叫人啼笑皆非的噩梦，尽是些光怪陆离的飞天钻地分身打架的事。出奇的明是噩梦却无法自拔，做的津津有味不愿醒过来。\r\n\r\n醒来却又经常到了傍晚，头痛得睁不开眼，想来也是，这么个性的噩梦，脑袋运转不够快根本做不出来。\r\n\r\n工作，学习，生活，赶路，吃饭，睡觉，运动，梦想，还有光。\r\n\r\n谁不是朝前活着，所以一步都不能停，每一步都走的稳稳当当。一步接一步，走的紧凑，什么时候该做什么事，什么空闲能用来干点更有意义的事情，把时间填的圆满，把岁月交给呼吸。\r\n\r\n往往累的喘不过气来，才会发现之后的每一次呼吸都如释重负。\r\n\r\n我们承担着莫须有的重担，大抵是认定了早晚有天这重担会落在自己身上。\r\n\r\n其实睡觉是一件事情，工作，生活，赶路，追逐光这些都是事情，只是看怎么去定义它们，紧凑地一项随着一项，严格的执行，可能是对自己最好的尊重，而很多人却又对你在乎和认真对待的事情不屑一顾，比如你想要的，和你所追逐的，又或者，睡觉和熬夜。\r\n\r\n活的自在，或许是因为认同自己的存在，而不够自在，又是太在乎身边的人了吧。\r\n\r\n佛说，“趣求诸欲人,常起于希望。诸欲若不遂,恼坏如箭中。”（世亲止欲偈）\r\n\r\n不妨前脚跟后脚，该干的和不该干的，大概心里都清楚。\r\n\r\n写这个题目时，缘是想起那个午后做的一个梦。昔梦早已归入混沌，只记得那个男人，行走在云雾之间，浑身上下什么都看不清晰，他站在我的对面，缓缓地说了一句话。\r\n\r\n他说，“要紧凑的活。”\r\n\r\n随后，好像又是一场令人头痛欲裂的生死逃亡的噩梦。\r\n\r\nB：伏仪《记昨日书》\r\n\r\n瓦南'),
+(5, 1, '5', '从来至美之物，皆利于孤行', '至美之物，皆在孤行。\r\n　　美到极致的东西，都是孤独的。\r\n　　它与别人无关，只缘自内心的触角多出更多的捕捉。\r\n　　情感如此，对情感保持尊重的人亦如此。\r\n　　再一次验证了柏拉图的失败。\r\n　　单纯的事物，在俗世面前不堪一击。\r\n　　我们不需要睁开眼睛就会知道，丑陋时时存在，丑陋会永远击穿我们对美好的向往。\r\n　　我们无力扭转理想的坠落，却又无法做到“瞎子”蔡生生那样的假装。\r\n　　这个世界，博情也罢，薄情也罢，谁会在乎？\r\n　　“世界毫发未损，没有停顿。”\r\n　　崇尚艺术、怀有理想主义的人，他们不是最糟的，他们“被困于激情，抑或死于激情，也许都不是最糟的”，\r\n　　至少，他们暴露了无法自知和自愈的缺陷，\r\n　　并由此证实了那朵悬崖上的花，不能碰，不可摘，至美之物，自生自灭。\r\n\r\n　　给那些文艺范儿们做足了煽情的功课。\r\n\r\n　　小资而才气纵横的笔调，很值得小文艺们看一看。\r\n\r\n　　让粗俗和鄙陋都见鬼去吧。\r\n\r\n　　好吧，我煽情了、、、、\r\n\r\n　　曾经，听到残酷的真相，义愤填膺地想去揭露所谓万恶的黑幕，现在的我环臂耸肩静观潜规则这搅屎棍是如何挥斥方遒，成就畜生道的。人老了，不再是当年那七尺昂扬的快意少年郎。只有在他妈的物价飞涨人心不古时，我怒了，愤懑的眼神依旧和腰间的刀同样锋利！可有屁用啊？'),
+(6, 1, '6', '至美植物', ''),
+(7, 1, '7', '一切都是孤独的', ''),
+(8, 1, '8', '别来万事', ''),
+(9, 1, '9', '与子内心', ''),
+(10, 3, '1', 'emmmmmmmmmmm', 'null'),
+(11, 3, '2', '', 'null'),
+(12, 3, '3', '', 'null'),
+(13, 3, '4', '', 'null'),
+(14, 3, '5', '', 'null'),
+(15, 3, '6', '', 'null'),
+(16, 3, '7', '', 'null'),
+(17, 3, '8', '', 'null'),
+(18, 5, '1', '', 'null'),
+(19, 5, '2', '', 'null'),
+(20, 5, '3', '', 'null'),
+(21, 5, '4', '', 'null'),
+(22, 5, '5', '', 'null'),
+(23, 5, '6', '', 'null'),
+(24, 5, '7', '', 'null'),
+(25, 5, '8', '', 'null'),
+(26, 5, '9', '', 'null'),
+(27, 5, '10', '', 'null'),
+(28, 5, '11', '', 'null'),
+(29, 5, '12', '', 'null');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_courseviedoresource`
+--
+
+CREATE TABLE IF NOT EXISTS `api_courseviedoresource` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `section` varchar(10) NOT NULL DEFAULT '',
+  `sectiontitle` varchar(55) NOT NULL DEFAULT '',
+  `path` varchar(88) NOT NULL DEFAULT '',
+  `pid` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- 转存表中的数据 `api_courseviedoresource`
+--
+
+INSERT INTO `api_courseviedoresource` (`id`, `section`, `sectiontitle`, `path`, `pid`) VALUES
+(1, '1', '简单介绍', '15321680893589751.mp4', 4),
+(2, '2', '深入学习', '15321681357546203.mp4', 4),
+(3, '3', '如何把握时间', '15321681555520598.mp4', 4),
+(4, '4', '怎么才能充分发挥自己实力', '', 4),
+(5, '5', '认知自我', '', 4),
+(6, '6', '找到适合自己的方法', '', 4),
+(7, '7', '改正过往', '', 4),
+(8, '8', '掌握阅读方式', '', 4),
+(9, '9', '课程总结', '', 4);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_course_delegat`
+--
+
+CREATE TABLE IF NOT EXISTS `api_course_delegat` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `coursename` varchar(30) NOT NULL,
+  `learning` int(10) NOT NULL,
+  `belong` varchar(11) NOT NULL,
+  `type` varchar(15) NOT NULL,
+  `seciton` int(10) NOT NULL,
+  `imgpath` varchar(55) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- 转存表中的数据 `api_course_delegat`
+--
+
+INSERT INTO `api_course_delegat` (`id`, `coursename`, `learning`, `belong`, `type`, `seciton`, `imgpath`) VALUES
+(1, 'Java从入门到精通', 185, '周XX老师', '计算机', 20, '/courseresource/master_java.png'),
+(2, 'PHP从入门到精通', 999, '于正老师', '计算机', 20, '/courseresource/master_php.jpg'),
+(5, '智能穿戴设备开发基础', 120, '常老师', '计算机', 8, '/courseresource/android.jpg'),
+(6, 'Python3入门+进阶', 0, '管理员', '计算机', 4, '/courseimg/15508823909402343.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_disscuz`
+--
+
+CREATE TABLE IF NOT EXISTS `api_disscuz` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `pid` int(10) NOT NULL,
+  `user` varchar(11) NOT NULL,
+  `say` varchar(255) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_interlocution`
+--
+
+CREATE TABLE IF NOT EXISTS `api_interlocution` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cid` int(10) NOT NULL,
+  `title` varchar(55) NOT NULL,
+  `content` text NOT NULL,
+  `user` varchar(11) NOT NULL,
+  `time` varchar(35) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- 转存表中的数据 `api_interlocution`
+--
+
+INSERT INTO `api_interlocution` (`id`, `cid`, `title`, `content`, `user`, `time`) VALUES
+(1, 1, '如何才能理解XXX是怎么走的流程', '如题描述，我想知道要如何才能知道XXX的生命周期，知道的同学希望能解答一下', '13672660891', '2018-10-29 19:59'),
+(2, 1, '我有点不明白老师第一章中讲的XXX', '我不太懂得老师讲的那个XXXX到底是什么意思，知道的同学解答一下', '18219265976', '2018-10-30 12:11:12'),
+(3, 0, '', '', '', ''),
+(4, 0, '', '', '', ''),
+(5, 0, 'null', 'null', 'null', 'null'),
+(6, 0, 'null', 'null', 'null', 'null'),
+(7, 0, 'null', 'null', 'null', 'null'),
+(8, 0, 'null', 'null', 'null', 'null'),
+(9, 5, 'aaaaaaa', 'aaaaaaa', '13672660891', '2019-02-13 09:15'),
+(10, 5, 'test', 'test', '13672660891', '2019-02-13 09:22'),
+(11, 5, '请问假如1=4，2=8，3=12那么4=?', '请问假如1=4，2=8，3=12那么4=?', '13672660891', '2019-02-14 08:45'),
+(12, 5, '大家能听懂吗？', '', '13672660891', '2018-04-22 17:29');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_interlocution_reply`
+--
+
+CREATE TABLE IF NOT EXISTS `api_interlocution_reply` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `content` varchar(255) NOT NULL,
+  `like` int(10) NOT NULL,
+  `time` varchar(30) NOT NULL,
+  `user` varchar(11) NOT NULL,
+  `pid` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+
+--
+-- 转存表中的数据 `api_interlocution_reply`
+--
+
+INSERT INTO `api_interlocution_reply` (`id`, `content`, `like`, `time`, `user`, `pid`) VALUES
+(1, '我觉得你应该考虑一下去看看书籍，然后从书中就可以找对详细的流程了', 5, '2018-10-29 20:09:11', '18219265976', 1),
+(2, '我觉得这个问题应该这样解决xxxxxx', 10, '2018-10-29 21:12:55', '13058352164', 1),
+(6, 'tests', 0, '2019-02-13 09:30', '13672660891', 0),
+(7, 'rrrrr', 0, '2019-02-13 09:31', '13672660891', 0),
+(8, 'sssss', 0, '2019-02-13 09:32', '13672660891', 0),
+(9, 'ßssssss', 0, '2019-02-13 11:28', '13672660891', 0),
+(10, 'Ziff FFC', 0, '2019-02-13 11:38', '13672660891', 0),
+(11, 'we www', 0, '2019-02-13 11:41', '13672660891', 0),
+(12, 'refer refer', 0, '2019-02-13 11:46', '13672660891', 0),
+(13, 'freer', 0, '2019-02-13 11:49', '13672660891', 0),
+(14, 'Ford FCC', 0, '2019-02-13 11:55', '13672660891', 1),
+(15, 'FCC', 0, '2019-02-13 11:55', '13672660891', 1),
+(16, 'I am come in', 0, '2019-02-13 12:19', '13672660891', 2),
+(17, '等于1', 0, '2019-02-14 08:50', '13672660891', 3);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_leaning_infos`
+--
+
+CREATE TABLE IF NOT EXISTS `api_leaning_infos` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `sid` int(10) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `classname` varchar(20) NOT NULL,
+  `times` varchar(50) NOT NULL,
+  `user` varchar(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `api_leaning_infos`
+--
+
+INSERT INTO `api_leaning_infos` (`id`, `sid`, `name`, `classname`, `times`, `user`) VALUES
+(1, 7, '周庚明', '17移动应用开发1班', '2018-10-14 08:25:02', '13672660891'),
+(4, 7, '周小明', '17移动应用开发1班', '2018-10-15 11:41:24', '13058352164');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_learning_recorder`
+--
+
+CREATE TABLE IF NOT EXISTS `api_learning_recorder` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `belong_section` int(10) NOT NULL DEFAULT '0',
+  `user` varchar(11) NOT NULL,
+  `isread` int(2) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- 转存表中的数据 `api_learning_recorder`
+--
+
+INSERT INTO `api_learning_recorder` (`id`, `belong_section`, `user`, `isread`) VALUES
+(1, 1, '13672660891', 1),
+(2, 2, '13672660891', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_score`
+--
+
+CREATE TABLE IF NOT EXISTS `api_score` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `coursename` varchar(55) NOT NULL,
+  `score` varchar(3) NOT NULL,
+  `user` varchar(11) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  `usertype` varchar(10) NOT NULL,
+  `courseid` int(10) NOT NULL,
+  `times` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 转存表中的数据 `api_score`
+--
+
+INSERT INTO `api_score` (`id`, `coursename`, `score`, `user`, `time`, `usertype`, `courseid`, `times`) VALUES
+(1, '数新风', '80', '13672660892', '2018-07-22 08:41:01', '学生用户', 1, '125'),
+(5, '测试添加的课程', '80', '13672660891', '2018-08-04 11:04:48', '学生用户', 3, '112'),
+(6, 'null', '0', '13672660891', '2019-02-13 08:35:12', 'stu', 0, '9607'),
+(7, '2', '25', '13672660891', '2019-02-13 08:49:09', 'stu', 2, '6345'),
+(8, '2', '25', '13672660891', '2019-02-13 08:51:54', 'stu', 2, '4'),
+(9, '2', '0', '13672660891', '2019-02-13 08:53:43', 'stu', 2, '6'),
+(10, '2', '25', '13672660891', '2019-02-14 00:56:48', 'stu', 2, '13');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_section_item`
+--
+
+CREATE TABLE IF NOT EXISTS `api_section_item` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `belong_course` int(10) NOT NULL DEFAULT '0',
+  `section_title` varchar(20) NOT NULL,
+  `section_sequence` int(3) NOT NULL,
+  `learning` int(10) NOT NULL DEFAULT '0',
+  `count` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=135 ;
+
+--
+-- 转存表中的数据 `api_section_item`
+--
+
+INSERT INTO `api_section_item` (`id`, `belong_course`, `section_title`, `section_sequence`, `learning`, `count`) VALUES
+(97, 1, '', 15, 0, 0),
+(96, 1, '', 14, 0, 0),
+(95, 1, '', 13, 0, 0),
+(94, 1, '', 12, 0, 0),
+(93, 1, '', 11, 0, 0),
+(92, 1, '', 10, 0, 0),
+(91, 1, '', 9, 0, 0),
+(90, 1, '', 8, 0, 0),
+(89, 1, '', 7, 0, 0),
+(88, 1, '', 6, 0, 0),
+(87, 1, '', 5, 0, 0),
+(86, 1, '', 4, 0, 0),
+(85, 1, '测试章节', 3, 0, 1),
+(83, 1, 'Java的前世今生', 1, 0, 1),
+(84, 1, 'Java之父', 2, 0, 2),
+(102, 1, '', 20, 0, 0),
+(101, 1, '', 19, 0, 0),
+(100, 1, '', 18, 0, 0),
+(99, 1, '', 17, 0, 0),
+(98, 1, '', 16, 0, 0),
+(103, 5, '第一章Android基础入门', 1, 0, 3),
+(104, 5, '第二章 Android UI开发', 2, 0, 6),
+(105, 5, '第三章 Activity ', 3, 0, 2),
+(106, 5, '第四章 数据存储', 4, 0, 3),
+(107, 5, '第五章 SQLite数据库', 5, 0, 3),
+(108, 5, '第六章 内容提供者', 6, 0, 2),
+(109, 5, '第七章  服务', 7, 0, 3),
+(111, 2, '', 1, 0, 0),
+(112, 2, '', 2, 0, 0),
+(113, 2, '', 3, 0, 0),
+(114, 2, '', 4, 0, 0),
+(115, 2, '', 5, 0, 0),
+(116, 2, '', 6, 0, 0),
+(117, 2, '', 7, 0, 0),
+(118, 2, '', 8, 0, 0),
+(119, 2, '', 9, 0, 0),
+(120, 2, '', 10, 0, 0),
+(121, 2, '', 11, 0, 0),
+(122, 2, '', 12, 0, 0),
+(123, 2, '', 13, 0, 0),
+(124, 2, '', 14, 0, 0),
+(125, 2, '', 15, 0, 0),
+(126, 2, '', 16, 0, 0),
+(127, 2, '', 17, 0, 0),
+(128, 2, '', 18, 0, 0),
+(129, 2, '', 19, 0, 0),
+(130, 2, '', 20, 0, 0),
+(131, 6, '第1章 Python入门导学', 1, 0, 2),
+(132, 6, '第2章 Python环境安装', 2, 0, 3),
+(133, 6, '第3章 理解什么是写代码与Python的', 3, 0, 5),
+(134, 6, '第4章 Python中表示“组”的概念与', 4, 0, 5);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_section_manage`
+--
+
+CREATE TABLE IF NOT EXISTS `api_section_manage` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cid` int(10) NOT NULL,
+  `title` varchar(55) NOT NULL,
+  `count` int(5) NOT NULL,
+  `squence` int(5) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
+
+--
+-- 转存表中的数据 `api_section_manage`
+--
+
+INSERT INTO `api_section_manage` (`id`, `cid`, `title`, `count`, `squence`) VALUES
+(38, 1, '', 0, 19),
+(37, 1, '', 0, 18),
+(36, 1, '', 0, 17),
+(35, 1, '', 0, 16),
+(34, 1, '', 0, 15),
+(33, 1, '', 0, 14),
+(32, 1, '', 0, 13),
+(31, 1, '', 0, 12),
+(30, 1, '', 0, 11),
+(29, 1, '', 0, 10),
+(28, 1, '', 0, 9),
+(27, 1, '', 0, 8),
+(26, 1, '', 0, 7),
+(25, 1, '', 0, 6),
+(24, 1, '', 0, 5),
+(23, 1, '', 0, 4),
+(22, 1, '', 0, 3),
+(21, 1, 'Java之父', 1, 2),
+(20, 1, 'Java的前世今生', 2, 1),
+(39, 1, '', 0, 20),
+(40, 2, '', 0, 1),
+(41, 2, '', 0, 2),
+(42, 2, '', 0, 3),
+(43, 2, '', 0, 4),
+(44, 2, '', 0, 5),
+(45, 2, '', 0, 6),
+(46, 2, '', 0, 7),
+(47, 2, '', 0, 8),
+(48, 2, '', 0, 9),
+(49, 2, '', 0, 10),
+(50, 2, '', 0, 11),
+(51, 2, '', 0, 12),
+(52, 2, '', 0, 13),
+(53, 2, '', 0, 14),
+(54, 2, '', 0, 15),
+(55, 2, '', 0, 16),
+(56, 2, '', 0, 17),
+(57, 2, '', 0, 18),
+(58, 2, '', 0, 19),
+(59, 2, '', 0, 20);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_small_sction_item`
+--
+
+CREATE TABLE IF NOT EXISTS `api_small_sction_item` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `sid` int(10) NOT NULL,
+  `videopath` varchar(55) NOT NULL,
+  `title` varchar(30) NOT NULL,
+  `testid` int(10) NOT NULL,
+  `viedo_length` varchar(20) NOT NULL,
+  `user` varchar(55) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
+
+--
+-- 转存表中的数据 `api_small_sction_item`
+--
+
+INSERT INTO `api_small_sction_item` (`id`, `sid`, `videopath`, `title`, `testid`, `viedo_length`, `user`, `status`) VALUES
+(1, 1, '/videopath/xxxxx.mp4', '1.Java之父---xxxx', 1, '132', '管理员', 1),
+(2, 1, 'videopath/xxxx.mp4', '2.Java和其他语言相比', 1, '225', '管理员', 1),
+(3, 2, '/videopath/xxxxx.mp4', '1.Java 虚拟机介绍', 2, '388', '管理员', 1),
+(5, 84, '/viedeo/15416484152874816.mp4', 'java从入门到精通[2013版-美著]', 2, '1234', '管理员', 1),
+(6, 84, '/viedeo/15417456484344512.mp4', 'test添加的啊啊啊啊', 3, '0', '管理员', 1),
+(7, 103, '/viedeo/15428571795230559.mp4', '1.1Android简介', 2, '125', '管理员', 1),
+(8, 103, '/viedeo/15428571918349853.mp4', '1.2Android开发环境搭建', 2, '222', '管理员', 1),
+(9, 103, '/viedeo/15428572033399687.mp4', '1.3开发第一个Android程序', 2, '123123', '管理员', 1),
+(13, 105, '/viedeo/15508844184673003.mp4', '3.1 Activity的创建', 3, '612', 'admin', 1),
+(11, 83, '/viedeo/15500295122977263.mp4', '1.Java的学习建议', 3, '512', 'admin', 1),
+(12, 85, '/viedeo/15500417024527984.mp4', '1.仅做测试使用', 2, '300', 'admin', 1),
+(14, 105, '/viedeo/15508844271294981.mp4', '3.2 Activity中的数据传递', 2, '300', 'admin', 1),
+(15, 104, '/viedeo/15508843416628020.mp4', '2.1 相对布局', 0, '266', 'admin', 1),
+(16, 104, '/viedeo/15508843543173094.mp4', '2.2 线性布局', 0, '321', 'admin', 1),
+(17, 104, '/viedeo/15508843651633086.mp4', '2.3 表格布局', 0, '2133', 'admin', 1),
+(18, 104, '/viedeo/15508843756881530.mp4', '2.4 网格布局', 0, '2314', 'admin', 1),
+(19, 104, '/viedeo/15508843867883758.mp4', '2.5 帧布局', 0, '1516', 'admin', 1),
+(20, 104, '/viedeo/15508843965610961.mp4', '2.6 绝对布局', 0, '1241', 'admin', 1),
+(21, 131, '/viedeo/15508824552827574.mp4', '1-1课程导学', 0, '325', 'admin', 1),
+(22, 131, '/viedeo/15508824823627654.mp4', '1-2Python的特点', 0, '221', 'admin', 1),
+(23, 132, '/viedeo/15508825221820677.mp4', ' 2-1 下载Python安装包', 0, '215', 'admin', 1),
+(24, 132, '/viedeo/15508825342157134.mp4', ' 2-2 安装Python', 0, '154', 'admin', 1),
+(25, 132, '/viedeo/15508825517190246.mp4', '2-3 IDLE与第一段Python代码', 0, '112', 'admin', 1),
+(26, 133, '/viedeo/15508825894971282.mp4', '3-1 什么是代码，什么是写代码', 0, '1213', 'admin', 1),
+(27, 133, '/viedeo/15508826024838622.mp4', ' 3-2 数字：整形与浮点型', 0, '1147', 'admin', 1),
+(28, 133, '/viedeo/15508826135425567.mp4', ' 3-3 10、2、8、16进制', 0, '124', 'admin', 1),
+(29, 133, '/viedeo/15508826278511901.mp4', ' 3-4 各进制的表示与转换', 0, '1242', 'admin', 1),
+(30, 133, '/viedeo/15508826377844207.mp4', ' 3-5 数字：布尔类型与复数', 0, '1142', 'admin', 1),
+(31, 134, '/viedeo/15508826643549926.mp4', ' 4-1 列表的定义', 0, '1235', 'admin', 1),
+(32, 134, '/viedeo/15508826767270171.mp4', ' 4-2 列表的基本操作', 0, '1234', 'admin', 1),
+(33, 134, '/viedeo/15508826897636291.mp4', ' 4-3 元组', 0, '1234', 'admin', 1),
+(34, 134, '/viedeo/15508826995215178.mp4', ' 4-4 序列总结', 0, '1246', 'admin', 1),
+(35, 134, '/viedeo/15508827085548339.mp4', ' 4-5 set 集合', 0, '1234', 'admin', 1),
+(36, 106, '/viedeo/15508844514762542.mp4', '4.1 文件存储', 0, '1214', 'admin', 1),
+(37, 106, '/viedeo/15508844617960937.mp4', '4.2 XML序列化和解析', 0, '1214', 'admin', 1),
+(38, 106, '/viedeo/15508844727132842.mp4', '4.3 SharedPreferences的使用', 0, '1141', 'admin', 1),
+(39, 107, '/viedeo/15508844884479918.mp4', '5.1 数据库的常用操作', 0, '1142', 'admin', 1),
+(40, 107, '/viedeo/15508844983733123.mp4', '5.2 ListView控件', 0, '1114', 'admin', 1),
+(41, 107, '/viedeo/15508845074316771.mp4', '5.3 读取数据库中的内容显示到ListView中', 0, '2133', 'admin', 1),
+(42, 108, '/viedeo/15508845244231353.mp4', '6.1 读取联系人信息', 0, '1213', 'admin', 1),
+(43, 108, '/viedeo/15508845328280090.mp4', '6.2 读取短信信息', 0, '441', 'admin', 1),
+(44, 109, '/viedeo/15508845526764251.mp4', '7.1 服务的创建', 0, '1563', 'admin', 1),
+(45, 109, '/viedeo/15508845612272215.mp4', '7.2 start方式启动服务', 0, '1422', 'admin', 1),
+(46, 109, '/viedeo/15508845724687285.mp4', '7.3 bind方式启动服务', 0, '1442', 'admin', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_small_test`
+--
+
+CREATE TABLE IF NOT EXISTS `api_small_test` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `sid` int(10) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `during` varchar(30) NOT NULL,
+  `user` varchar(11) NOT NULL,
+  `score` varchar(3) NOT NULL,
+  `time` varchar(55) NOT NULL,
+  `classname` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- 转存表中的数据 `api_small_test`
+--
+
+INSERT INTO `api_small_test` (`id`, `sid`, `name`, `during`, `user`, `score`, `time`, `classname`) VALUES
+(2, 7, '周庚明', '300', '13672660891', '90', '2018-10-14 10:48:47', '17移动应用开发1班'),
+(6, 0, '', '', '', '', '2019-02-15 11:23:14', ''),
+(5, 7, '周小明', '9', '13058352164', '25', '2018-10-15 11:35:55', '17移动应用开发1班');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_stucou`
+--
+
+CREATE TABLE IF NOT EXISTS `api_stucou` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `user` varchar(11) NOT NULL,
+  `courseid` int(10) NOT NULL,
+  `pro` int(5) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+
+--
+-- 转存表中的数据 `api_stucou`
+--
+
+INSERT INTO `api_stucou` (`id`, `user`, `courseid`, `pro`) VALUES
+(36, '13672660891', 3, 2),
+(37, '13672660891', 1, 2),
+(40, '18928070670', 1, 4),
+(39, '18928070670', 3, 1),
+(38, '13672660891', 4, 1),
+(35, '13672660891', 5, 4);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_student`
+--
+
+CREATE TABLE IF NOT EXISTS `api_student` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `no` varchar(15) NOT NULL,
+  `binduser` varchar(11) NOT NULL DEFAULT '',
+  `isbind` int(2) NOT NULL DEFAULT '0',
+  `name` varchar(10) NOT NULL,
+  `classname` varchar(20) NOT NULL,
+  `academic` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `api_student`
+--
+
+INSERT INTO `api_student` (`id`, `no`, `binduser`, `isbind`, `name`, `classname`, `academic`) VALUES
+(1, '0114170103', '13672660891', 1, '周庚明', '17移动应用开发1', '计算机工程学院');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_subject`
+--
+
+CREATE TABLE IF NOT EXISTS `api_subject` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `pid` int(10) NOT NULL,
+  `a` varchar(55) NOT NULL DEFAULT '',
+  `b` varchar(55) NOT NULL DEFAULT '',
+  `c` varchar(55) NOT NULL DEFAULT '',
+  `d` varchar(55) NOT NULL DEFAULT '',
+  `trueoption` varchar(2) NOT NULL DEFAULT '',
+  `title` varchar(55) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 转存表中的数据 `api_subject`
+--
+
+INSERT INTO `api_subject` (`id`, `pid`, `a`, `b`, `c`, `d`, `trueoption`, `title`) VALUES
+(1, 2, '冷饮', '功能维生素饮料', '可乐', '白开水', 'A', '请问在剧烈运动中，适合喝些什么？'),
+(2, 2, '阿瑟东阿瑟东', '我测试的', '嗯嗯', '好的', 'B', '啊实打实打算大苏打'),
+(3, 2, '哦哦哦没问题', '好的', '嗯嗯嗯', '啦啦啦啦', 'C', '阿瑟东阿瑟东'),
+(4, 2, '呵呵呵', '啊圣诞快乐', '俺的看来', '你卡上的', 'D', '为非法手段'),
+(5, 2, '撒旦能尽快 ', '你卡上', '尼撒看见', '三年时间看', 'A', '啊哈哈哈'),
+(6, 3, '', '', '', '', '', ''),
+(7, 3, '', '', '', '', '', ''),
+(8, 3, '', '', '', '', '', ''),
+(9, 3, '', '', '', '', '', ''),
+(10, 3, '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_sutdentinfo`
+--
+
+CREATE TABLE IF NOT EXISTS `api_sutdentinfo` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `no` varchar(15) NOT NULL,
+  `classname` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `api_sutdentinfo`
+--
+
+INSERT INTO `api_sutdentinfo` (`id`, `name`, `no`, `classname`) VALUES
+(4, '周小明', '0114170104', '17移动应用开发1班'),
+(3, '周庚明', '0114170103', '17移动应用开发1班');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_text`
+--
+
+CREATE TABLE IF NOT EXISTS `api_text` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `pid` int(10) NOT NULL,
+  `path` varchar(55) NOT NULL,
+  `title` varchar(55) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `api_text`
+--
+
+INSERT INTO `api_text` (`id`, `pid`, `path`, `title`) VALUES
+(1, 4, 'amzmo.doc', '学习资料');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_user`
+--
+
+CREATE TABLE IF NOT EXISTS `api_user` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(11) NOT NULL,
+  `pwd` varchar(32) NOT NULL,
+  `type` varchar(30) NOT NULL,
+  `addtime` varchar(20) NOT NULL,
+  `isbind` int(2) NOT NULL DEFAULT '0',
+  `no` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 转存表中的数据 `api_user`
+--
+
+INSERT INTO `api_user` (`id`, `username`, `pwd`, `type`, `addtime`, `isbind`, `no`) VALUES
+(10, '13058352164', '123', 'stu', '2018-09-11 03:21:37', 0, '0114170104'),
+(7, '123', '123', 'stu', '2018-09-15 17:17:18', 1, '0114170104'),
+(8, '13672660891', '123', 'stu', '2018-10-10 03:16:12', 0, '0114170103');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `api_usertype`
+--
+
+CREATE TABLE IF NOT EXISTS `api_usertype` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(22) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- 转存表中的数据 `api_usertype`
+--
+
+INSERT INTO `api_usertype` (`id`, `name`, `time`) VALUES
+(1, '学生用户', '2018-07-22  08:51:12'),
+(3, '工人用户', '2018-07-22 09:03:59'),
+(4, '在职人员', '2018-07-22 09:12:44'),
+(5, '社会公众', '2018-07-22 09:12:59'),
+(7, '教师用户', '2018-07-22 09:13:18');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
